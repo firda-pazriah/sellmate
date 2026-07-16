@@ -296,7 +296,7 @@ pnpm --filter mobile start
 
 More detailed documentation:
 
-- [Project Overview](docs/PROJECT_OVERVIEW.md)
+- [Project Overview](docs/PROJECT-OVERVIEW.md)
 - [Setup Guide](docs/SETUP.md)
 
 ---
