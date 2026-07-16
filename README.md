@@ -1,159 +1,337 @@
-# Turborepo starter
+# Sellmate
 
-This Turborepo starter is maintained by the Turborepo core team.
+A productivity toolkit for small fashion brand sellers running their business on Shopee.
 
-## Using this example
+This project focuses on the operational problems that traditional e-commerce ERPs
+do not solve well: customer review handling, order prioritization, packing proof,
+and daily seller workflows.
 
-Run the following command:
+The goal is not to replace existing ERP systems, but to build tools that help
+sellers save time and make better operational decisions.
 
-```sh
-npx create-turbo@latest
+---
+
+## ✨ Features
+
+### Review Analysis & Priority Reply
+
+Manage customer reviews more efficiently.
+
+Features:
+
+- Fetch Shopee reviews
+- Analyze review sentiment using AI
+- Identify common issues:
+  - sizing
+  - fabric quality
+  - color accuracy
+  - delivery experience
+- Generate suggested replies
+- Prioritize reviews that need attention
+
+---
+
+### Instant Order Highlight
+
+Never miss urgent fulfillment deadlines.
+
+Features:
+
+- Highlight time-sensitive orders
+- Show pickup deadline countdown
+- Prioritize urgent orders
+- Track packing status
+
+---
+
+### WhatsApp Order Capture
+
+Convert manual WhatsApp sales workflow into structured orders.
+
+Features:
+
+- Parse seller order recap messages
+- Extract:
+  - customer information
+  - address
+  - products
+  - quantities
+  - total payment
+- Match payment proof
+- Track order lifecycle
+
+Order flow:
+
+```
+Waiting for order
+        ↓
+Paid
+        ↓
+Confirmed
+        ↓
+Fulfilled
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+### Packing Video Recorder (Mobile)
 
-### Apps and Packages
+Create packing proof documentation for every order.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Features:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- Scan order barcode
+- Capture packing video
+- Store shipping label
+- Organize evidence by order
 
-### Utilities
+Example:
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+```
+PackingVideos/
+└── ORDER-12345/
+    ├── video.mp4
+    ├── resi.pdf
+    └── resi-photo.jpg
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+### Bulk Print Resi
+
+Simplify shipping label printing.
+
+Features:
+
+- Select multiple orders
+- Generate shipping documents
+- Print in one batch
+
+---
+
+## 🏗️ Project Structure
+
+This project uses a monorepo architecture powered by pnpm workspace.
+
+```
+sellmate/
+
+├── apps/
+│   ├── web/          # Seller dashboard (Next.js)
+│   └── mobile/       # Packing application (React Native Expo)
+│
+├── packages/
+│   └──              # Shared packages
+│
+├── docs/
+│   ├── SETUP.md
+│   └── PROJECT_OVERVIEW.md
+│
+├── package.json
+└── pnpm-workspace.yaml
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## 🛠️ Tech Stack
 
-```sh
-turbo build --filter=docs
+### Web
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+### Mobile
+
+- React Native
+- Expo
+
+### AI
+
+- Claude API
+
+### Marketplace Integration
+
+- Shopee Open Platform API
+
+### Package Management
+
+- pnpm workspace
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Make sure you have:
+
+- Node.js >= 20
+- pnpm >= 9
+- Git
+
+Check:
+
+```bash
+node -v
+pnpm -v
 ```
 
-Without global `turbo`:
+---
 
-```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+## Clone Repository
+
+```bash
+git clone <repository-url>
+
+cd sellmate
 ```
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## Install Dependencies
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+Install all workspace dependencies:
 
-```sh
-cd my-turborepo
-turbo dev
+```bash
+pnpm install
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
+## Environment Setup
+
+Each application has its own environment configuration.
+
+### Web
+
+```bash
+cd apps/web
+
+cp .env.example .env.local
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### Mobile
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+```bash
+cd apps/mobile
 
-```sh
-turbo dev --filter=web
+cp .env.example .env
 ```
 
-Without global `turbo`:
+For Shopee API credentials and service configuration,
+see:
 
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+📖 [Setup Guide](docs/SETUP.md)
+
+---
+
+# Running the Project
+
+## Web Application
+
+From repository root:
+
+```bash
+pnpm --filter web dev
 ```
 
-### Remote Caching
+or:
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+```bash
+cd apps/web
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
+pnpm dev
 ```
 
-Without global `turbo`, use your package manager:
+Runs on:
 
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
+```
+http://localhost:3000
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Mobile Application
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+From repository root:
 
-```sh
-turbo link
+```bash
+pnpm --filter mobile start
 ```
 
-Without global `turbo`:
+or:
 
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
+```bash
+cd apps/mobile
+
+pnpm start
 ```
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+# Development Workflow
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+This repository follows a monorepo workflow.
+
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Run specific applications:
+
+```bash
+pnpm --filter web dev
+
+pnpm --filter mobile start
+```
+
+---
+
+# Documentation
+
+More detailed documentation:
+
+- [Project Overview](docs/PROJECT_OVERVIEW.md)
+- [Setup Guide](docs/SETUP.md)
+
+---
+
+# Data Privacy
+
+This project is designed as a self-hosted template.
+
+Each seller:
+
+- Uses their own Shopee credentials
+- Runs their own instance
+- Owns their own data
+
+There is no shared seller database.
+
+---
+
+# Roadmap
+
+Current focus:
+
+- Shopee integration
+- Review management
+- Seller workflow automation
+- Packing proof system
+
+Future improvements:
+
+- Team permissions
+- Cloud deployment
+- Additional marketplace integrations
+
+---
+
+# License
+
+MIT License

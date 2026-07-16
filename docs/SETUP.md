@@ -1,6 +1,6 @@
 # Setup Guide
 
-This project is a **seller productivity suite monorepo** containing:
+This project is a **sellmate monorepo** containing:
 
 - Web application
 - Mobile application
@@ -35,7 +35,7 @@ git --version
 ```bash
 git clone <your-repository-url>
 
-cd seller-productivity-suite
+cd sellmate
 ```
 
 Install dependencies:

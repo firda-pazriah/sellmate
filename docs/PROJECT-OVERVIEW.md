@@ -1,4 +1,4 @@
-# Seller Productivity Suite — Project Overview
+# Sellmate — Project Overview
 
 ## Vision
 
