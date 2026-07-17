@@ -7,30 +7,26 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link, LucideIcon, MoreHorizontalIcon } from "lucide-react";
+import { NavigationGroup } from "@/config/navigation";
 
-type Menu = {
-  title: string;
-  items: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-  }[];
-};
-export function NavMain({ menus }: { menus: Menu[] }) {
+export function NavMain({ navigation }: { navigation: NavigationGroup[] }) {
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      {menus.map((group) => (
-        <SidebarGroup key={group.title}>
-          <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
+      {navigation.map((nav) => (
+        <SidebarGroup key={nav.group}>
+          <SidebarGroupLabel>{nav.group}</SidebarGroupLabel>
 
           <SidebarMenu>
-            {group.items.map((item) => (
+            {nav.menus.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton>
-                  <item.icon className="size-4" />
-                  {item.title}
-                </SidebarMenuButton>
+                <SidebarMenuButton
+                  render={
+                    <a href={item.href}>
+                      <item.icon className="size-4" />
+                      {item.title}
+                    </a>
+                  }
+                />
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
