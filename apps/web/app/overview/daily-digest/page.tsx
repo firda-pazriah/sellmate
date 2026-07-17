@@ -1,9 +1,9 @@
-import { ItemIcon } from "@/components/item-icon";
+import { TaskItem } from "@/components/task-card";
 import { Container } from "@/components/layout/container";
 import { StatCard } from "@/components/stat-card";
 
 import { Progress } from "@/components/ui/progress";
-import { MessageSquareMore, Printer, Zap } from "lucide-react";
+import { MessageSquare, Printer, Zap } from "lucide-react";
 
 function DailyDigest() {
   return (
@@ -14,20 +14,22 @@ function DailyDigest() {
           <span className="text-sm text-muted-foreground">1 of 3 done</span>
         </div>
         <Progress value={100 / 3} />
-        <ItemIcon
-          title="Pack instant order 21341239JKAS"
-          description="Pickup in 47min"
+        <TaskItem
+          title="Pickup within 22 minutes"
+          subtitle="Pickup in 47 min"
           icon={Zap}
-          isDanger
+          variant="danger"
         />
-        <ItemIcon
-          title="Reply to 2-star review –– sizing complaint"
-          description="Pickup in 47min"
-          icon={MessageSquareMore}
+
+        <TaskItem
+          title="Reply to 2-star review"
+          subtitle="Pickup in 47 min"
+          icon={MessageSquare}
         />
-        <ItemIcon
+
+        <TaskItem
           title="Print 8 resi for today's orders"
-          description="Pickup in 47min"
+          subtitle="Pickup in 47 min"
           icon={Printer}
         />
       </Container>
