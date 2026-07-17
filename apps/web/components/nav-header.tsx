@@ -6,13 +6,13 @@ export function NavHeader() {
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <div className="flex gap-4 items-center">
-          <div className="flex aspect-square size-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+        <div className="flex gap-4 items-center px-4">
+          <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
             S
           </div>
-          <div className="grid">
+          <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-medium">Sellmate</span>
-            <span className="truncate text-sm">Outfidence</span>
+            <span className="truncate text-xs">Outfidence</span>
           </div>
         </div>
       </SidebarMenuItem>
