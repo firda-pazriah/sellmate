@@ -18,6 +18,7 @@ const data = {
     name: "firda",
     email: "firda@example.com",
     avatar: "/avatar/firda.png",
+    avatarFallback: "FP",
   },
 };
 

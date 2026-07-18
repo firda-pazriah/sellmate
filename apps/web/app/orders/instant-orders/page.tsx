@@ -1,10 +1,13 @@
 import { InstantOrderCard } from "@/components/instant-card";
 import { Container } from "@/components/layout/container";
+import data from "./data.json";
+import { HistoryOrderTable } from "@/components/history-order-table/history-order-table";
+import { HistoryOrder } from "@/components/history-order-table/types";
 
 export default function InstantOrders() {
   return (
-    <Container className="flex gap-4 p-0 h-full">
-      <Container className="rounded-sm gap-4 flex flex-col border border-muted  w-4/12">
+    <Container className="grid h-full grid-cols-12 gap-4 pb-0">
+      <Container className="bg-gray-50 rounded-sm border border-muted col-span-4 space-y-4 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
         <div className="gap-0">
           <h1 className="text-3xl font-semibold">Instant Order</h1>
         </div>
@@ -38,8 +41,14 @@ export default function InstantOrders() {
           statusVariant="pending_acceptance"
         />
       </Container>
-      <Container className="bg-gray-50 h-full gap-4 flex flex-col w-8/12">
-        History Orders
+      <Container className="space-y-4 col-span-8">
+        <div className="gap-0">
+          <h1 className="text-3xl font-semibold">History Orders</h1>
+          <span className="text-sm text-muted-foreground">
+            Recent instant orders
+          </span>
+        </div>
+        <HistoryOrderTable data={data as HistoryOrder[]} />
       </Container>
     </Container>
   );
