@@ -38,17 +38,9 @@ export function InstantOrderCard({
       }
     >
       <CardContent className="space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Zap className={cn("size-5", isDanger && "text-red-500")} />
-            <span className="font-medium">Pickup within {pickupWithin}</span>
-          </div>
-
-          <span
-            className={cn("text-sm font-medium", isDanger && "text-red-500")}
-          >
-            Cutoff {cutoff}
-          </span>
+        <div className="flex items-center gap-2">
+          <Zap className={cn("size-5", isDanger && "text-red-500")} />
+          <span className="font-medium">Pickup within {pickupWithin}</span>
         </div>
 
         <div className="space-y-1">
@@ -58,7 +50,14 @@ export function InstantOrderCard({
           </p>
         </div>
 
-        <Badge variant={config.badge}>{config.label}</Badge>
+        <div className="flex items-center justify-between">
+          <Badge variant={config.badge}>{config.label}</Badge>
+          <span
+            className={cn("text-sm font-medium", isDanger && "text-red-500")}
+          >
+            Cutoff {cutoff}
+          </span>
+        </div>
       </CardContent>
 
       {config.buttonLabel && (
