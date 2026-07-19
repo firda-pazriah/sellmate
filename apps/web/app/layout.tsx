@@ -3,11 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 
 import { cn } from "@/lib/utils";
-import { AppHeader } from "@/components/app-header";
-import { Container } from "@/components/layout/container";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import { AppHeader } from "@/components/layout/app-header";
+import { Container } from "@/components/ui/container";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 

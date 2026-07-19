@@ -1,5 +1,5 @@
 import { TaskItem } from "@/components/task-card";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/ui/container";
 import { StatCard } from "@/components/stat-card";
 
 import { Progress } from "@/components/ui/progress";

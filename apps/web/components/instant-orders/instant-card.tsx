@@ -2,7 +2,7 @@ import { Printer, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
 
 import { ORDER_STATUS } from "@/constants/order-status";

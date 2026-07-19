@@ -1,5 +1,5 @@
-import { InstantOrderCard } from "@/components/instant-card";
-import { Container } from "@/components/layout/container";
+import { InstantOrderCard } from "@/components/instant-orders/instant-card";
+import { Container } from "@/components/ui/container";
 import data from "./data.json";
 import { HistoryOrderTable } from "@/components/history-order-table/history-order-table";
 import { HistoryOrder } from "@/components/history-order-table/types";
