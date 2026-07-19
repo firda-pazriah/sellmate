@@ -51,7 +51,6 @@ function WhatsappOrderCardImpl({
 }: WhatsappOrderCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const config = ORDER_STATUS[statusVariant];
-
   return (
     <Card className={whatsappCardVariants({ statusVariant })}>
       <CardContent className="p-0 space-y-2">
