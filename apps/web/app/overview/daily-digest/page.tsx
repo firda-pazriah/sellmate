@@ -1,6 +1,6 @@
-import { TaskItem } from "@/components/task-card";
+import { TaskItem } from "@/components/daily-digest/task-card";
 import { Container } from "@/components/ui/container";
-import { StatCard } from "@/components/stat-card";
+import { StatCard } from "@/components/daily-digest/stat-card";
 
 import { Progress } from "@/components/ui/progress";
 import { MessageSquare, Printer, Zap } from "lucide-react";

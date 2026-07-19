@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/container";
-import { WhatsappOrderCard } from "@/components/whatsapp-card";
+import { WhatsappOrderCard } from "@/components/whatsapp-orders/whatsapp-card";
 
 export default function Whatsapp() {
   return (

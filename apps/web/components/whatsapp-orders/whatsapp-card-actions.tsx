@@ -1,5 +1,5 @@
 import { CardFooter } from "@/components/ui/card";
-import { Input } from "./ui/input";
+import { Input } from "@base-ui/react";
 import { Button } from "@/components/ui/button";
 import { Check, MessageCircle, Printer, Send } from "lucide-react";
 
