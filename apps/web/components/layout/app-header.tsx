@@ -1,6 +1,5 @@
 "use client";
 
-import { SidebarTrigger } from "./ui/sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { useBreadcrumb } from "@/hooks/use-breadcrumbs";
+import { SidebarTrigger } from "../ui/sidebar";
 
 export function AppHeader() {
   const breadcrumb = useBreadcrumb();

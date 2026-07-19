@@ -14,4 +14,9 @@ export const ORDER_STATUS = {
     badge: "info",
     buttonLabel: "Confirm Order",
   },
+  already_pickup: {
+    label: "Need Recipt Number",
+    badge: "secondary",
+    buttonLabel: "Save",
+  },
 } as const;

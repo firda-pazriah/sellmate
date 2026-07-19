@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-import { NavMain } from "@/components/nav-main";
 import {
   Sidebar,
   SidebarContent,
@@ -11,7 +10,8 @@ import {
 } from "@/components/ui/sidebar";
 import { NavHeader } from "./nav-header";
 import { NavUser } from "./nav-user";
-import { navigation } from "../config/navigation";
+import { NavMain } from "./nav-main";
+import { navigation } from "@/config/navigation";
 
 const data = {
   user: {
