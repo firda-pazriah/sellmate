@@ -4,6 +4,7 @@ import data from "@/data/orders.json";
 import { OrderTable } from "@/components/order-table/table";
 import { Order } from "@/components/order-table/types";
 
+
 export default function InstantOrders() {
   const instantOrder = data as Order[];
 
