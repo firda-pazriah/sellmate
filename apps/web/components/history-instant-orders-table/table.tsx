@@ -29,13 +29,13 @@ import {
 } from "@/components/ui/pagination";
 
 import { columns } from "./columns";
-import { HistoryOrder } from "./types";
+import { HistoryInstantOrder } from "./types";
 
 type Props = {
-  data: HistoryOrder[];
+  data: HistoryInstantOrder[];
 };
 
-export function HistoryOrderTable({ data }: Props) {
+export function HistoryInstantOrderTable({ data }: Props) {
   const [search, setSearch] = useState("");
 
   const filteredData = useMemo(() => {

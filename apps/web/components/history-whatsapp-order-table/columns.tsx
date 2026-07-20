@@ -1,28 +1,16 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { HistoryOrder } from "./types";
 import { Badge } from "../ui/badge";
 import { ORDER_STATUS } from "@/constants/order-status";
+import { HistoryWhatsappOrder } from "./types";
+import { Printer } from "lucide-react";
+import { Button } from "../ui/button";
 
-export const columns: ColumnDef<HistoryOrder>[] = [
+export const columns: ColumnDef<HistoryWhatsappOrder>[] = [
   {
     accessorKey: "order_sn",
     header: "Order No",
-  },
-  {
-    id: "product",
-    header: "Product",
-    cell: ({ row }) => {
-      const item = row.original.item_list[0];
-
-      return (
-        <div>
-          <p className="font-medium">{item.item_name}</p>
-          <p className="text-sm text-muted-foreground">{item.model_name}</p>
-        </div>
-      );
-    },
   },
   {
     accessorKey: "order_status",
@@ -37,8 +25,21 @@ export const columns: ColumnDef<HistoryOrder>[] = [
     header: "Amount",
     cell: ({ row }) => (
       <>
-        {row.original.currency} {row.original.total_amount.toLocaleString()}
+        {row.original.payment.currency}{" "}
+        {row.original.payment.amount.toLocaleString("en-US")}
       </>
+    ),
+  },
+  {
+    accessorKey: "shipping_number",
+    header: "Shipping Number",
+  },
+  {
+    id: "recipt",
+    cell: () => (
+      <Button variant="ghost">
+        <Printer /> Print
+      </Button>
     ),
   },
 ];

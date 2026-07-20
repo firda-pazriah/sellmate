@@ -1,0 +1,66 @@
+[
+  {
+    "order_sn": "2404098R148U37H",
+    "customer_name": "Dewi Lestari",
+    "customer_number": "+6278379xx89",
+    "order_status": "ready_to_pickup",
+    "order_date": "2023-06-23",
+    "shipping_number": "SPX81209929222",
+    "shipping_address": "Jl. Kemang Raya No. 12, Jakarta Selatan, DKI Jakarta 12730",
+    "payment": {
+      "currency": "IDR",
+      "amount": 890000,
+      "payment_status": "paid"
+    },
+    "products": [
+      "Hava Sweater Black –– size M",
+      "Hava Sweater Black –– size M"
+    ]
+  },
+  {
+    "order_sn": "24040982R48U37H",
+    "customer_name": "Dewi Lestari",
+    "customer_number": "+6278379xx89",
+    "order_status": "pending_packaging",
+    "order_date": "2023-06-23",
+    "shipping_number": "SPX81209929222",
+    "shipping_address": "Jl. Kemang Raya No. 12, Jakarta Selatan, DKI Jakarta 12730",
+    "payment": {
+      "currency": "IDR",
+      "amount": 890000,
+      "payment_status": "paid",
+      "payment_date": "25 Jul,04:00"
+    },
+    "products": ["prduk 1"]
+  },
+  {
+    "order_sn": "2404098R448U37H",
+    "customer_name": "Dewi Lestari",
+    "customer_number": "+6278379xx89",
+    "order_status": "pending_acceptance",
+    "order_date": "2023-06-23",
+    "shipping_number": "SPX81209929222",
+    "shipping_address": "Jl. Kemang Raya No. 12, Jakarta Selatan, DKI Jakarta 12730",
+    "payment": {
+      "currency": "IDR",
+      "amount": 890000,
+      "payment_status": "paid"
+    },
+    "products": ["prduk 1"]
+  },
+  {
+    "order_sn": "2404098R48U637H",
+    "customer_name": "Dewi Lestari",
+    "customer_number": "+6278379xx89",
+    "order_status": "already_pickup",
+    "order_date": "2023-06-23",
+    "shipping_number": "SPX81209929222",
+    "shipping_address": "Jl. Kemang Raya No. 12, Jakarta Selatan, DKI Jakarta 12730",
+    "payment": {
+      "currency": "IDR",
+      "amount": 890000,
+      "payment_status": "paid"
+    },
+    "products": ["prduk 1"]
+  }
+]
