@@ -1,3 +1,13 @@
+import type { ComponentProps } from "react";
+import type { Badge } from "@/components/ui/badge";
+import { WhatsappOrderStatus } from "./whatsapp-order";
+
+type OrderStatusConfig = {
+  label: string;
+  badge: ComponentProps<typeof Badge>["variant"];
+  buttonLabel: string | null;
+};
+
 export const ORDER_STATUS = {
   ready_to_pickup: {
     label: "Ready to pickup",
@@ -15,8 +25,13 @@ export const ORDER_STATUS = {
     buttonLabel: "Confirm Order",
   },
   already_pickup: {
-    label: "Need Recipt Number",
+    label: "Need receipt number",
     badge: "secondary",
     buttonLabel: "Save",
   },
-} as const;
+  fullfilled: {
+    label: "Fulfilled",
+    badge: "outline",
+    buttonLabel: null,
+  },
+} as const satisfies Record<WhatsappOrderStatus, OrderStatusConfig>;

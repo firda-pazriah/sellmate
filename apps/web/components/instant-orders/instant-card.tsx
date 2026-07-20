@@ -1,3 +1,4 @@
+"use client";
 import { Printer, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -11,10 +12,13 @@ type InstantOrderCardProps = {
   pickupWithin: string;
   cutoff: string;
   orderId: string;
-  productName: string;
-  customerName: string;
-  status: string;
-  statusVariant: "ready_to_pickup" | "pending_packaging" | "pending_acceptance";
+  productItems: {
+    item_name: string;
+    model_name: string;
+    model_quantity_purchased: number;
+    model_discounted_price: number;
+  }[];
+  status: "ready_to_pickup" | "pending_packaging" | "pending_acceptance";
   variant?: "danger" | "default";
 };
 
@@ -22,14 +26,13 @@ export function InstantOrderCard({
   pickupWithin,
   cutoff,
   orderId,
-  productName,
-  customerName,
-  statusVariant,
+  productItems,
+  status,
   variant = "default",
 }: InstantOrderCardProps) {
   const isDanger = variant === "danger";
 
-  const config = ORDER_STATUS[statusVariant];
+  const config = ORDER_STATUS[status];
 
   return (
     <Card
@@ -46,7 +49,14 @@ export function InstantOrderCard({
         <div className="space-y-1">
           <p className="font-medium">{orderId}</p>
           <p className="text-sm text-muted-foreground">
-            {productName} • {customerName}
+            {productItems.map((product, index) => (
+              <span
+                key={`${index}-${product}`}
+                className="text-muted-foreground"
+              >
+                {product.item_name}
+              </span>
+            ))}
           </p>
         </div>
 

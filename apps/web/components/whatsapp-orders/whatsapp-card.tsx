@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+
+import { memo, useState } from "react";
+import { cva } from "class-variance-authority";
 import { Check, ChevronDown, MessageCircle } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -12,44 +14,43 @@ import {
 } from "@/components/ui/collapsible";
 
 import { ORDER_STATUS } from "@/constants/order-status";
-import { cva } from "class-variance-authority";
+import { WhatsappOrderStatus } from "@/constants/whatsapp-order";
 import WhatsappOrderCardActions from "./whatsapp-card-actions";
+
+const whatsappCardVariants = cva("p-4 gap-2", {
+  variants: {
+    statusVariant: {
+      already_pickup: "bg-background text-primary",
+      pending_acceptance: "bg-green-500/10",
+      pending_packaging: "bg-yellow-500/10",
+      ready_to_pickup: "bg-blue-500/10",
+      fullfilled: "bg-muted/10",
+    },
+  },
+  defaultVariants: {
+    statusVariant: "already_pickup",
+  },
+});
 
 type WhatsappOrderCardProps = {
   whatsappNumber: string;
   orderId: string;
   paymentInfo?: string;
   productItems: string[];
-  statusVariant:
-    | "ready_to_pickup"
-    | "pending_packaging"
-    | "pending_acceptance"
-    | "already_pickup";
-  variant?: "success" | "warning" | "default";
+  shippingAddress: string;
+  statusVariant: WhatsappOrderStatus;
 };
 
-export function WhatsappOrderCard({
+function WhatsappOrderCardImpl({
   whatsappNumber,
   orderId,
   paymentInfo,
   productItems,
+  shippingAddress,
   statusVariant,
 }: WhatsappOrderCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const config = ORDER_STATUS[statusVariant];
-  const whatsappCardVariants = cva("p-4 gap-2", {
-    variants: {
-      statusVariant: {
-        already_pickup: "bg-background text-primary",
-        pending_acceptance: "bg-green-500/10",
-        pending_packaging: "bg-yellow-500/10",
-        ready_to_pickup: "bg-blue-500/10",
-      },
-    },
-    defaultVariants: {
-      statusVariant: "already_pickup",
-    },
-  });
   return (
     <Card className={whatsappCardVariants({ statusVariant })}>
       <CardContent className="p-0 space-y-2">
@@ -65,7 +66,7 @@ export function WhatsappOrderCard({
           onOpenChange={setIsOpen}
           className="flex flex-col"
         >
-          <h2 className="font-semibold">{orderId}</h2>
+          <h3 className="font-semibold">{orderId}</h3>
 
           <div className="flex">
             <Check /> {paymentInfo}
@@ -73,7 +74,7 @@ export function WhatsappOrderCard({
           <CollapsibleTrigger
             render={
               <Button variant="link" size="sm">
-                <span className="">Lihat detail order</span> <ChevronDown />
+                <span>Lihat detail order</span> <ChevronDown />
               </Button>
             }
             className="justify-start"
@@ -81,9 +82,7 @@ export function WhatsappOrderCard({
           <CollapsibleContent className="flex flex-col gap-2">
             <div className="rounded-md border px-4 py-2 text-sm">
               <p className="font-medium">Shipping address</p>
-              <p className="text-muted-foreground">
-                100 Market St, San Francisco
-              </p>
+              <p className="text-muted-foreground">{shippingAddress}</p>
             </div>
             <div className="rounded-md border px-4 py-2 text-sm">
               <p className="font-medium">Items</p>
@@ -103,3 +102,5 @@ export function WhatsappOrderCard({
     </Card>
   );
 }
+
+export const WhatsappOrderCard = memo(WhatsappOrderCardImpl);
