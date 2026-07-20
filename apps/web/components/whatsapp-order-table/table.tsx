@@ -29,23 +29,21 @@ import {
 } from "@/components/ui/pagination";
 
 import { columns } from "./columns";
-import { HistoryInstantOrder } from "./types";
+import { WhatsappOrder } from "./types";
 
 type Props = {
-  data: HistoryInstantOrder[];
+  data: WhatsappOrder[];
 };
 
-export function HistoryInstantOrderTable({ data }: Props) {
+export function WhatsappOrderTable({ data }: Props) {
   const [search, setSearch] = useState("");
 
   const filteredData = useMemo(() => {
+    if (!search) return data;
     const keyword = search.toLowerCase();
 
     return data.filter((order) => {
-      const products = order.item_list
-        .map((item) => `${item.item_name} ${item.model_name}`)
-        .join(" ")
-        .toLowerCase();
+      const products = order.products.join(" ").toLowerCase();
 
       return (
         order.order_sn.toLowerCase().includes(keyword) ||

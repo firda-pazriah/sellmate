@@ -1,11 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { WhatsappOrderCard } from "@/components/whatsapp-orders/whatsapp-card";
-import { HistoryWhatsappOrderTable } from "../../../components/history-whatsapp-order-table/table";
-import data from "./data.json";
-import { HistoryWhatsappOrder } from "@/components/history-whatsapp-order-table/types";
+import { WhatsappOrderTable } from "../../../components/whatsapp-order-table/table";
+import data from "@/data/whatsapp-orders.json";
+import { WhatsappOrder } from "@/components/whatsapp-order-table/types";
 
 export default function WhatsappOrders() {
-  const whatsappOrder = data as HistoryWhatsappOrder[];
+  const whatsappOrder = data as WhatsappOrder[];
   return (
     <Container className="grid h-full grid-cols-12 gap-4 pb-0">
       <Container className="bg-gray-50 rounded-sm border border-muted col-span-4 space-y-4 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
@@ -31,7 +31,7 @@ export default function WhatsappOrders() {
             Recent whatsapp orders
           </span>
         </div>
-        <HistoryWhatsappOrderTable data={data as HistoryWhatsappOrder[]} />
+        <WhatsappOrderTable data={data as WhatsappOrder[]} />
       </Container>
     </Container>
   );

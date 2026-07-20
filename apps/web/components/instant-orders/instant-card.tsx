@@ -1,3 +1,4 @@
+"use client";
 import { Printer, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -49,9 +50,12 @@ export function InstantOrderCard({
           <p className="font-medium">{orderId}</p>
           <p className="text-sm text-muted-foreground">
             {productItems.map((product, index) => (
-              <p key={`${index}-${product}`} className="text-muted-foreground">
+              <span
+                key={`${index}-${product}`}
+                className="text-muted-foreground"
+              >
                 {product.item_name}
-              </p>
+              </span>
             ))}
           </p>
         </div>

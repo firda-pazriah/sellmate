@@ -1,11 +1,11 @@
 import { InstantOrderCard } from "@/components/instant-orders/instant-card";
 import { Container } from "@/components/ui/container";
-import data from "./data.json";
-import { HistoryInstantOrderTable } from "@/components/history-instant-orders-table/table";
-import { HistoryInstantOrder } from "@/components/history-instant-orders-table/types";
+import data from "@/data/orders.json";
+import { OrderTable } from "@/components/order-table/table";
+import { Order } from "@/components/order-table/types";
 
 export default function InstantOrders() {
-  const instantOrder = data as HistoryInstantOrder[];
+  const instantOrder = data as Order[];
 
   return (
     <Container className="grid h-full grid-cols-12 gap-4 pb-0">
@@ -32,7 +32,7 @@ export default function InstantOrders() {
             Recent instant orders
           </span>
         </div>
-        <HistoryInstantOrderTable data={data as HistoryInstantOrder[]} />
+        <OrderTable data={data as Order[]} />
       </Container>
     </Container>
   );

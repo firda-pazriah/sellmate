@@ -3,11 +3,11 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "../ui/badge";
 import { ORDER_STATUS } from "@/constants/order-status";
-import { HistoryWhatsappOrder } from "./types";
+import { WhatsappOrder } from "./types";
 import { Printer } from "lucide-react";
 import { Button } from "../ui/button";
 
-export const columns: ColumnDef<HistoryWhatsappOrder>[] = [
+export const columns: ColumnDef<WhatsappOrder>[] = [
   {
     accessorKey: "order_sn",
     header: "Order No",
