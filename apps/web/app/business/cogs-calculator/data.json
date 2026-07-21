@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "product_name": "Polka Shirt",
+    "cogs_price": 123000,
+    "recommendation_price": 178000
+  },
+  {
+    "id": "2",
+    "product_name": "Pants Danbowl",
+    "cogs_price": 78000,
+    "recommendation_price": 110000
+  }
+]
