@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/collapsible";
 
 import { ORDER_STATUS } from "@/constants/order-status";
-import { WhatsappOrderStatus } from "@/constants/whatsapp-order";
+import { OrderStatus } from "@/constants/whatsapp-order";
 import WhatsappOrderCardActions from "./whatsapp-card-actions";
 
 const whatsappCardVariants = cva("p-4 gap-2", {
@@ -38,7 +38,7 @@ type WhatsappOrderCardProps = {
   paymentInfo?: string;
   productItems: string[];
   shippingAddress: string;
-  statusVariant: WhatsappOrderStatus;
+  statusVariant: OrderStatus;
 };
 
 function WhatsappOrderCardImpl({

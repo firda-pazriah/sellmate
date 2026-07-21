@@ -7,6 +7,7 @@ import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
 
 import { ORDER_STATUS } from "@/constants/order-status";
+import { OrderStatus } from "@/constants/whatsapp-order";
 
 type InstantOrderCardProps = {
   pickupWithin: string;
@@ -16,9 +17,8 @@ type InstantOrderCardProps = {
     item_name: string;
     model_name: string;
     model_quantity_purchased: number;
-    model_discounted_price: number;
   }[];
-  status: "ready_to_pickup" | "pending_packaging" | "pending_acceptance";
+  status: OrderStatus;
   variant?: "danger" | "default";
 };
 
