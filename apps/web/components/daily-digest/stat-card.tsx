@@ -41,9 +41,7 @@ export function StatCard({
               variant="outline"
               className={cn(
                 "gap-1",
-                isPositive
-                  ? "text-emerald-600"
-                  : "text-red-600"
+                isPositive ? "text-emerald-600" : "text-red-600",
               )}
             >
               {isPositive ? (
@@ -51,7 +49,6 @@ export function StatCard({
               ) : (
                 <ArrowDownRight className="size-3.5" />
               )}
-
               {Math.abs(change)}%
             </Badge>
           </CardAction>

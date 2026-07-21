@@ -1,5 +1,5 @@
 import {
-  ChartNoAxesColumn,
+  Calculator,
   LayoutGrid,
   MessageCircleMore,
   MessageSquareMore,
@@ -65,9 +65,9 @@ export const navigation: NavigationGroup[] = [
     group: "Business",
     menus: [
       {
-        title: "Financial Report",
-        href: "/business/financial-report",
-        icon: ChartNoAxesColumn,
+        title: "COGS Calculator",
+        href: "/business/cogs-calculator",
+        icon: Calculator,
       },
       {
         title: "Manage Team",
