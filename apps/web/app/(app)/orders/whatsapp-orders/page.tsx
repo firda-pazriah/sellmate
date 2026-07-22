@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { WhatsappOrderCard } from "@/components/whatsapp-orders/whatsapp-card";
 
-import { WhatsappOrderTable } from "../../../components/whatsapp-order-table/table";
+import { WhatsappOrderTable } from "@/components/whatsapp-order-table/table";
 import data from "@/data/whatsapp-orders.json";
 import { WhatsappOrder } from "@/components/whatsapp-order-table/types";
 
