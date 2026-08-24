@@ -40,7 +40,7 @@ export default function Reviews() {
 
   return (
     <Container className="grid h-full grid-cols-12 gap-4 pb-0">
-      <Container className="bg-gray-50 rounded-sm border border-muted col-span-6 space-y-4 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
+      <Container className="bg-background rounded-sm border border-muted col-span-6 space-y-4 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
         <div className="space-y-4">
           <h1 className="text-3xl font-semibold">Reviews Analytics</h1>
           <form className="flex gap-4" onSubmit={handleAnalyze}>

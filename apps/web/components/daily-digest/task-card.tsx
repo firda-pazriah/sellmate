@@ -31,13 +31,13 @@ export function TaskItem({
   return (
     <Item variant={isDanger ? "danger" : "outline"} className={cn(className)}>
       <ItemMedia variant="icon">
-        <Icon className={cn("size-5", isDanger && "text-red-500")} />
+        <Icon className={cn("size-5", isDanger && "text-destructive")} />
       </ItemMedia>
 
       <ItemContent>
         <ItemTitle>{title}</ItemTitle>
 
-        <ItemDescription className={cn(isDanger && "text-red-500")}>
+        <ItemDescription className={cn(isDanger && "text-destructive")}>
           {subtitle}
         </ItemDescription>
       </ItemContent>

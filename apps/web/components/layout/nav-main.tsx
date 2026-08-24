@@ -31,7 +31,8 @@ export function NavMain({ navigation }: { navigation: NavigationGroup[] }) {
                       <item.icon className="size-4" />
                       {item.title}
                     </a>
-                  }
+                  }     
+
                 />
               </SidebarMenuItem>
             ))}
