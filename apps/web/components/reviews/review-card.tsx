@@ -70,11 +70,12 @@ function ReviewCardImpl({
       <span className="text-xs">
         {review.productName} –– {review.productVariant}
       </span>
-      <Card className="bg-secondary p-2 gap-2">
+      <Card className="p-2 gap-2">
         <span className="flex gap-2 items-center">
-          <Sparkles size={12} /> Draft Reply
+          <Sparkles size={12} />{" "}
+          <span className="text-xs text-foreground">Draft Reply</span>
         </span>
-        <CardContent className="p-0 bg-background rounded-md">
+        <CardContent className="p-0 bg-transparent rounded-md">
           <Textarea
             value={replyMessage}
             maxLength={MAX_REPLY_LENGTH}

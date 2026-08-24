@@ -23,17 +23,17 @@ function DailyDigest() {
 
         <TaskItem
           title="Reply to 2-star review"
-          subtitle="Pickup in 47 min"
+          subtitle="1hr ago"
           icon={MessageSquare}
         />
 
         <TaskItem
           title="Print 8 resi for today's orders"
-          subtitle="Pickup in 47 min"
+          subtitle="Pickup in 5 hr 49 min"
           icon={Printer}
         />
       </Container>
-      <Container className="bg-gray-50 h-full gap-4 flex flex-col w-4/12">
+      <Container className="bg-background h-full gap-4 flex flex-col w-4/12">
         <StatCard
           title="Dana Penjualan"
           value="IDR 308.731"

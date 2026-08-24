@@ -18,7 +18,7 @@
       }
     ],
     "pickup_done_time": 1712726577,
-    "ship_by_date": 1712671200,
+    "ship_by_date": 1785816911,
     "shipping_carrier": "Giao Hàng Nhanh",
     "package_list": [
       {
@@ -31,7 +31,7 @@
   {
     "order_sn": "2404098R48U37H",
     "customer_name": "Firda",
-    "order_status": "ready_to_pickup",
+    "order_status": "pending_packaging",
     "total_amount": 32119,
     "currency": "VND",
     "item_list": [
@@ -47,7 +47,7 @@
       }
     ],
     "pickup_done_time": 1712726577,
-    "ship_by_date": 1712671200,
+    "ship_by_date": 1785819971,
     "shipping_carrier": "Giao Hàng Nhanh",
     "package_list": [
       {

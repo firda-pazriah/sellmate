@@ -11,6 +11,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useBreadcrumb } from "@/hooks/use-breadcrumbs";
 import { SidebarTrigger } from "../ui/sidebar";
+import { ThemeToggle } from "../theme/theme-toggle";
 
 export function AppHeader() {
   const breadcrumb = useBreadcrumb();
@@ -36,6 +37,7 @@ export function AppHeader() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+        <ThemeToggle />
       </div>
     </header>
   );

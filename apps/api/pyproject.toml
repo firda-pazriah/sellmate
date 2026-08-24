@@ -1,0 +1,26 @@
+[project]
+name = "sellmate_api"
+version = "0.1.0"
+description = "Sellmate API"
+readme = "README.md"
+authors = [
+    { name = "firda-pazriah", email = "efeffirda@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.19.1",
+    "asyncpg>=0.31.0",
+    "fastapi[standard]>=0.141.1",
+    "greenlet>=3.5.5",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.15.0",
+    "python-dotenv>=1.2.3",
+    "sqlalchemy>=2.0.52",
+]
+
+[project.scripts]
+backend = "sellmate_api:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
